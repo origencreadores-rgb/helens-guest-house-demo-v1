@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería | Helen's Guest House</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#31433b;
+  background:#fff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ENCABEZADO */
+header{
+  background:#fff;
+  padding:20px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.brand{
+  text-align:center;
+  flex-shrink:0;
+}
+
+.brand-main{
+  font-size:23px;
+  font-weight:700;
+  letter-spacing:.3px;
+  color:#26352e;
+}
+
+.brand-main .guest{
+  font-weight:400;
+}
+
+.brand-sub{
+  margin-top:7px;
+  font-family:Georgia,serif;
+  font-size:18px;
+  font-style:italic;
+  color:#456a53;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  font-weight:600;
+  color:#35483e;
+}
+
+nav a:hover{
+  color:#71907b;
+}
+
+.reserve{
+  background:#456a53;
+  color:#fff;
+  padding:11px 18px;
+  border-radius:4px;
+}
+
+/* PORTADA GALERIA */
+.gallery-hero{
+  min-height:570px;
+  background:
+    linear-gradient(rgba(20,30,25,.18),rgba(20,30,25,.18)),
+    url("https://www.helensguesthouse.ar/assets/images/page-titles/12.jpg")
+    center/cover no-repeat;
+  display:flex;
+  align-items:flex-end;
+  color:#fff;
+}
+
+.hero-content{
+  width:100%;
+  padding:0 6% 75px;
+  text-shadow:0 2px 10px rgba(0,0,0,.45);
+}
+
+.breadcrumb{
+  font-size:17px;
+  margin-bottom:18px;
+}
+
+.hero-content h1{
+  margin:0;
+  font-family:Georgia,serif;
+  font-size:clamp(52px,7vw,88px);
+  font-weight:700;
+}
+
+/* GALERIA */
+.gallery-section{
+  max-width:1400px;
+  margin:auto;
+  padding:70px 5%;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.gallery-item{
+  overflow:hidden;
+  background:#f4f6f4;
+  min-height:330px;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  min-height:330px;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease, filter .35s ease;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.025);
+  filter:brightness(.90);
+}
+
+/* CONTACTO EN EL MODULO 21 */
+.contact-card{
+  min-height:330px;
+  background:#456a53;
+  color:#fff;
+  padding:38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.contact-card h2{
+  margin:0 0 24px;
+  font-family:Georgia,serif;
+  font-size:30px;
+}
+
+.contact-card p{
+  margin:5px 0;
+  line-height:1.6;
+  font-size:17px;
+}
+
+.contact-card a{
+  color:#fff;
+}
+
+/* PIE */
+footer{
+  text-align:center;
+  padding:55px 20px;
+  background:#f3f7f4;
+}
+
+.footer-brand{
+  font-size:30px;
+  font-weight:700;
+  color:#26352e;
+}
+
+.footer-brand .guest{
+  font-weight:400;
+}
+
+.footer-sub{
+  margin-top:10px;
+  font-family:Georgia,serif;
+  font-size:21px;
+  font-style:italic;
+  color:#456a53;
+}
+
+.footer-line{
+  width:150px;
+  height:1px;
+  background:#71907b;
+  margin:18px auto;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{
+    display:none;
+  }
+
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-hero{
+    min-height:480px;
+  }
+}
+
+@media(max-width:600px){
+  header{
+    justify-content:center;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-section{
+    padding:35px 18px;
+  }
+
+  .gallery-item,
+  .gallery-item img,
+  .contact-card{
+    min-height:300px;
+  }
+
+  .gallery-hero{
+    min-height:420px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-main">
+      HELEN'S <span class="guest">GUEST</span> HOUSE
+    </div>
+    <div class="brand-sub">Hotel Boutique</div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#">Las Habitaciones</a>
+    <a href="#">Hope Bristró</a>
+    <a href="#">Catering</a>
+    <a href="#">Cata de Vinos</a>
+    <a href="#">Contacto</a>
+    <a class="reserve" href="#">Reservar</a>
+  </nav>
+</header>
+
+<section class="gallery-hero">
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> › Galería de Imágenes
+    </div>
+    <h1>Galería</h1>
+  </div>
+</section>
+
+<main class="gallery-section">
+  <div class="gallery-grid">
+
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria01.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria02.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria03.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria04.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria05.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria06.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria07.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria08.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria09.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria10.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria11.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria12.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria13.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria14.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria15.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria16.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria17.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria18.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria19.jpg" alt="Helen's Guest House"></div>
+    <div class="gallery-item"><img src="https://www.helensguesthouse.ar/assets/images/case-studies/galeria/galeria20.jpg" alt="Helen's Guest House"></div>
+
+    <div class="contact-card">
+      <h2>Datos de contacto</h2>
+      <p>Florida 514 | Pergamino</p>
+      <p>Buenos Aires - Argentina</p>
+      <p>Tel.: +54 02477 424752</p>
+      <p><a href="mailto:helensguesthouse@gmail.com">helensguesthouse@gmail.com</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    HELEN'S <span class="guest">GUEST</span> HOUSE
+  </div>
+  <div class="footer-line"></div>
+  <div class="footer-sub">Hotel Boutique</div>
+</footer>
+
+</body>
+</html>
