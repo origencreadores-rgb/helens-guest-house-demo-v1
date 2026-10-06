@@ -1,80 +1,365 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helen's Guest House | Hotel Boutique</title>
 
-  <title>Helen's Guest House | Hotel Boutique</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:#31433b;
+  background:#fff;
+}
+a{text-decoration:none;color:inherit}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #333333;
-    }
+/* CABECERA */
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#eef5ef;
+  border-bottom:1px solid #dce8df;
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  min-height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  padding:12px 25px;
+}
+.brand{
+  text-align:center;
+  line-height:1;
+  color:#355f4a;
+  white-space:nowrap;
+}
+.brand-main{
+  font-size:21px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+.brand-main .guest{font-weight:400}
+.brand-sub{
+  margin-top:7px;
+  font-size:10px;
+  letter-spacing:3px;
+}
+nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:14px;
+}
+.reserve{
+  background:#4f765f;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:4px;
+  font-weight:bold;
+}
 
-    header {
-      padding: 24px;
-      text-align: center;
-      background: #e8f1eb;
-    }
+/* PORTADA */
+.hero{
+  min-height:72vh;
+  background:
+    linear-gradient(rgba(20,35,27,.30),rgba(20,35,27,.30)),
+    url("https://www.helensguesthouse.ar/assets/images/services/1.jpg")
+    center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:40px 20px;
+}
+.hero-box{
+  max-width:760px;
+  text-shadow:0 2px 12px rgba(0,0,0,.45);
+}
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:clamp(42px,7vw,78px);
+  margin:0 0 15px;
+}
+.hero p{
+  font-size:20px;
+  letter-spacing:1px;
+  margin-bottom:30px;
+}
+.hero-btn{
+  display:inline-block;
+  padding:13px 25px;
+  background:rgba(255,255,255,.94);
+  color:#3e654f;
+  border-radius:4px;
+  font-weight:bold;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 2px;
-    }
+/* SECCIONES */
+.section{
+  max-width:1150px;
+  margin:auto;
+  padding:75px 25px;
+}
+.intro{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+.eyebrow{
+  color:#5f846d;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+}
+h2{
+  font-family:Georgia,serif;
+  font-size:38px;
+  font-weight:normal;
+  color:#355f4a;
+  margin:12px 0 20px;
+}
+.intro p{
+  font-size:17px;
+  line-height:1.8;
+  color:#59645e;
+}
 
-    .guest {
-      font-weight: 400;
-    }
+/* EXPERIENCIAS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:45px;
+}
+.card{
+  background:#f6f8f6;
+  overflow:hidden;
+}
+.card img{
+  width:100%;
+  height:330px;
+  object-fit:cover;
+  transition:.35s;
+}
+.card:hover img{transform:scale(1.025)}
+.card-body{padding:24px}
+.card h3{
+  font-family:Georgia,serif;
+  font-size:25px;
+  color:#416b53;
+  margin:0 0 12px;
+}
+.card p{
+  line-height:1.65;
+  color:#66716b;
+  margin:0;
+}
 
-    .boutique {
-      margin-top: 7px;
-      font-size: 16px;
-      letter-spacing: 4px;
-    }
+/* SERVICIOS */
+.services{
+  background:#edf4ef;
+}
+.services-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:70px 25px;
+  text-align:center;
+}
+.service-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+.service-links a{
+  border:1px solid #71907b;
+  padding:12px 20px;
+  background:#fff;
+  color:#456a53;
+}
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 70px 25px;
-      text-align: center;
-    }
+/* UBICACION */
+.location{
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+.contact-box{
+  padding:15px 10px;
+}
+.contact-box p{
+  line-height:1.8;
+  color:#59645e;
+}
+.map{
+  height:280px;
+  border-radius:8px;
+  overflow:hidden;
+}
+.map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
 
-    h2 {
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
+/* FOOTER */
+footer{
+  text-align:center;
+  background:#355f4a;
+  color:#fff;
+  padding:32px 20px;
+}
+footer .guest{font-weight:400}
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-  </style>
+/* CELULAR */
+@media(max-width:850px){
+  nav{display:none}
+  .nav{justify-content:center}
+  .reserve{display:none}
+  .hero{min-height:62vh}
+  .cards{grid-template-columns:1fr}
+  .location{grid-template-columns:1fr}
+  .map{height:240px}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>
-      HELEN'S <span class="guest">GUEST</span> HOUSE
-    </h1>
-    <div class="boutique">HOTEL BOUTIQUE</div>
-  </header>
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-main">
+        HELEN'S <span class="guest">GUEST</span> HOUSE
+      </div>
+      <div class="brand-sub">HOTEL BOUTIQUE</div>
+    </div>
 
-  <main>
-    <h2>Helen's Guest House</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Habitaciones</a>
+      <a href="#">Hope Bristró</a>
+      <a href="#">Catering</a>
+      <a href="#">Cata de vinos</a>
+      <a href="#">Contacto</a>
+    </nav>
 
+    <a class="reserve" href="#">Reservar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-box">
+    <h1>Helen's Guest House</h1>
+    <p>Hospitalidad, gastronomía, arquitectura y arte</p>
+    <a class="hero-btn" href="#casa">Conocer la casa</a>
+  </div>
+</section>
+
+<section class="section" id="casa">
+  <div class="intro">
+    <div class="eyebrow">Hotel Boutique · Pergamino</div>
+    <h2>Una casona con historia y personalidad</h2>
     <p>
-      Hospitalidad, gastronomía, arquitectura y arte.
+      Helen's Guest House es una casona de estilo inglés,
+      único Hotel Boutique en Pergamino. Cuenta con siete
+      habitaciones exclusivas, cada una decorada de manera
+      particular, restaurante, salón de té y tragos.
     </p>
+  </div>
 
-    <p>
-      Estamos construyendo la nueva experiencia web de Helen's Guest House.
-    </p>
-  </main>
+  <div class="cards">
+
+    <article class="card">
+      <img src="https://www.helensguesthouse.ar/assets/images/services/1.jpg" alt="Entrada de Helen's Guest House">
+      <div class="card-body">
+        <h3>Entrada</h3>
+        <p>
+          Una casona antigua con espacios personalizados y
+          detalles de estilo que hacen de la casa un lugar especial.
+        </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://www.helensguesthouse.ar/assets/images/services/2.jpg" alt="Lobby">
+      <div class="card-body">
+        <h3>Check in</h3>
+        <p>
+          Un lobby amplio y relajado para recibir a los huéspedes
+          con todas las comodidades.
+        </p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://www.helensguesthouse.ar/assets/images/services/3.jpg" alt="Espacio de relax">
+      <div class="card-body">
+        <h3>Espacio de relax</h3>
+        <p>
+          Un espacio en la planta superior para relajarse y disfrutar
+          de un aperitivo, desayuno o merienda.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="services">
+  <div class="services-inner">
+    <div class="eyebrow">Descubrí Helen's</div>
+    <h2>Mucho más que una estadía</h2>
+
+    <div class="service-links">
+      <a href="#">Habitaciones</a>
+      <a href="#">Hope Bristró</a>
+      <a href="#">Catering</a>
+      <a href="#">Cata de vinos</a>
+      <a href="#">Galería</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="location">
+
+    <div class="contact-box">
+      <div class="eyebrow">Ubicación</div>
+      <h2>Te esperamos en Pergamino</h2>
+
+      <p>
+        <strong>Helen's Guest House</strong><br>
+        Florida 514 · Pergamino, Buenos Aires<br>
+        Tel.: +54 02477 424752<br>
+        helensguesthouse@gmail.com<br>
+        Lunes a domingo · 8 a.m. – 7 p.m.
+      </p>
+    </div>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=Florida%20514%20Pergamino%20Buenos%20Aires&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <strong>HELEN'S <span class="guest">GUEST</span> HOUSE</strong><br>
+  <small>Hotel Boutique · Pergamino, Buenos Aires</small>
+</footer>
 
 </body>
 </html>
