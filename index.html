@@ -73,6 +73,7 @@ nav{
 
 /* PORTADA */
 .hero{
+  position:relative;
   min-height:72vh;
   background:
     linear-gradient(rgba(20,35,27,.08),rgba(20,35,27,.08)),
@@ -98,6 +99,16 @@ nav{
   font-size:20px;
   letter-spacing:1px;
   margin-bottom:30px;
+}
+  .hero-label{
+  font-family:Georgia,serif;
+  font-size:28px;
+  font-weight:700;
+  color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,.55);
+  position:absolute;
+  right:35px;
+  bottom:30px;
 }
 .hero-btn{
   display:inline-block;
@@ -268,7 +279,7 @@ footer .guest{font-weight:400}
 <section class="hero">
   <div class="hero-box">
     
-    <a class="hero-btn" href="#casa">Conocer la casa</a>
+    <div class="hero-label">Entrada</div>
   </div>
 </section>
 
