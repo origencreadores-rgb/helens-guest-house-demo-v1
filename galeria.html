@@ -280,6 +280,52 @@ footer{
     min-height:420px;
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+/* IDENTIDAD HOTEL BOUTIQUE */
+.brand-sub,
+.footer-sub{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-family:'UnifrakturCook',Georgia,serif;
+  font-style:normal;
+  font-weight:700;
+  color:#456a53;
+  white-space:nowrap;
+}
+
+.brand-sub{
+  margin-top:7px;
+  font-size:25px;
+}
+
+.footer-sub{
+  margin-top:10px;
+  font-size:28px;
+}
+
+.brand-sub::before,
+.brand-sub::after,
+.footer-sub::before,
+.footer-sub::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:8px;
+  border-top:1px solid #456a53;
+}
+
+.brand-sub::before,
+.footer-sub::before{
+  border-left:6px double #456a53;
+}
+
+.brand-sub::after,
+.footer-sub::after{
+  border-right:6px double #456a53;
+}  
 </style>
 </head>
 
