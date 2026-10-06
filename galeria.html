@@ -52,10 +52,37 @@ header{
 
 .brand-sub{
   margin-top:7px;
-  font-family:Georgia,serif;
-  font-size:18px;
-  font-style:italic;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:"Old English Text MT","UnifrakturCook","Lucida Blackletter",Georgia,serif;
+  font-size:22px;
+  font-style:normal;
+  font-weight:500;
   color:#456a53;
+  white-space:nowrap;
+}
+
+.brand-sub::before,
+.brand-sub::after{
+  content:"❧";
+  display:inline-flex;
+  align-items:center;
+  width:58px;
+  overflow:hidden;
+  font-family:Georgia,serif;
+  font-size:22px;
+  color:#456a53;
+}
+
+.brand-sub::before{
+  justify-content:flex-end;
+  transform:scaleX(-1);
+}
+
+.brand-sub::after{
+  justify-content:flex-end;
 }
 
 nav{
@@ -186,10 +213,26 @@ footer{
 
 .footer-sub{
   margin-top:10px;
-  font-family:Georgia,serif;
-  font-size:21px;
-  font-style:italic;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-family:"Old English Text MT","UnifrakturCook","Lucida Blackletter",Georgia,serif;
+  font-size:24px;
+  font-style:normal;
   color:#456a53;
+}
+
+.footer-sub::before,
+.footer-sub::after{
+  content:"❧";
+  font-family:Georgia,serif;
+  font-size:24px;
+  color:#456a53;
+}
+
+.footer-sub::before{
+  transform:scaleX(-1);
 }
 
 .footer-line{
