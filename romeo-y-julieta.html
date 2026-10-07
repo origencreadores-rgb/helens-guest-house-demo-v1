@@ -31,19 +31,36 @@
       background:rgba(255,255,255,.97);
       box-shadow:0 2px 12px rgba(0,0,0,.08);
     }
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 24px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-areas:
+    "brand actions"
+    "nav nav";
+  align-items:center;
+  gap:10px 30px;
+}
 
-    .header-inner{
-      max-width:1200px;
-      margin:auto;
-      min-height:92px;
-      padding:12px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:30px;
+
+.header-actions{
+  grid-area:actions;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+}
+
+nav{
+  grid-area:nav;
+}
+   
     }
 
     .brand{
+    grid-area:brand;
       text-decoration:none;
       color:#456a53;
       text-align:center;
@@ -75,8 +92,15 @@
       font-weight:400;
       color:#456a53;
     }
-
+.header-actions{
+  grid-area:actions;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+}
     nav{
+      grid-area:nav;
       display:flex;
       align-items:center;
       justify-content:flex-end;
@@ -448,7 +472,10 @@
       </div>
       <div class="brand-sub">hotel boutique</div>
     </a>
-
+<div class="header-actions">
+  <a class="phone" href="tel:+5492477424752">☎ &nbsp;+54 9 2477 424752</a>
+  <a class="reserve" href="#">Reservas</a>
+</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="#">Las Habitaciones</a>
@@ -457,8 +484,10 @@
       <a href="#">Cata de vinos</a>
       <a href="galeria.html">Galería</a>
       <a href="#">Contacto</a>
-     <a class="phone" href="tel:+5492477424752">☎ &nbsp;+54 9 2477 424752</a>
-      <a class="reserve" href="#">Reservar</a>
+  
+
+<nav>
+     
     </nav>
 
   </div>
