@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hope Bristró | Helen's Guest House</title>
+<style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:#444;
+      background:#fff;
+      line-height:1.7;
+    }
+
+    /* ENCABEZADO FIJO */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.97);
+      box-shadow:0 2px 12px rgba(0,0,0,.08);
+    }
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 24px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-areas:
+    "brand actions"
+    "nav nav";
+  align-items:center;
+  gap:10px 30px;
+}
+
+
+.header-actions{
+  grid-area:actions;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+}
+
+
+   
+  
+
+    .brand{
+    grid-area:brand;
+      text-decoration:none;
+      color:#456a53;
+      text-align:center;
+      line-height:1;
+      flex-shrink:0;
+    }
+.brand,
+.brand:visited,
+.brand:hover,
+.brand:active{
+  color:#456a53;
+  text-decoration:none;
+}
+
+.brand *{
+  color:inherit;
+  text-decoration:none;
+}
+    .brand-main{
+      font-family:Georgia,serif;
+      font-size:25px;
+      letter-spacing:1px;
+      white-space:nowrap;
+    }
+
+    .brand-main strong{
+      font-weight:700;
+    }
+
+    .brand-main span{
+      font-weight:400;
+    }
+
+    .brand-sub{
+      margin-top:7px;
+      width:100%;
+      text-align:center;
+      font-family:Georgia,serif;
+      font-size:15px;
+      font-weight:400;
+      color:#456a53;
+    }
+
+    nav{
+      grid-area:nav;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#456a53;
+      font-size:14px;
+      font-weight:600;
+      transition:.2s;
+    }
+
+    nav a:hover{
+      opacity:.65;
+    }
+
+   .phone{
+  color:#456a53;
+  font-size:14px;
+  font-weight:600;
+  white-space:nowrap;
+}
+    .reserve{
+      padding:10px 18px;
+      background:#456a53;
+      color:white !important;
+      border-radius:3px;
+    }
+
+    /* PORTADA */
+    .hero{
+      min-height:570px;
+      background:
+        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+        url("https://www.helensguesthouse.ar/assets/images/page-titles/1d.jpg")
+        center center/cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+    }
+
+    .hero-content{
+      width:100%;
+      max-width:1200px;
+      margin:auto;
+      padding:0 28px 70px;
+      color:white;
+      text-shadow:0 2px 8px rgba(0,0,0,.35);
+    }
+
+    .breadcrumb{
+      font-size:14px;
+      margin-bottom:8px;
+    }
+
+    .hero h1{
+      font-family:Georgia,serif;
+      font-size:58px;
+      font-weight:400;
+    }
+
+    /* PRESENTACIÓN */
+    .intro{
+      max-width:1150px;
+      margin:80px auto;
+      padding:0 25px;
+      display:grid;
+      grid-template-columns:42% 58%;
+      align-items:stretch;
+    }
+
+    .room-card{
+      background:#456a53;
+      color:#fff;
+      padding:55px 48px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .room-card small{
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+      opacity:.85;
+    }
+
+    .room-card h2{
+      font-family:Georgia,serif;
+      font-size:35px;
+      font-weight:400;
+      margin:7px 0 25px;
+    }
+
+    .room-card p{
+      font-size:16px;
+      margin-bottom:30px;
+    }
+
+    .consultar{
+      display:inline-block;
+      align-self:flex-start;
+      padding:11px 25px;
+      background:white;
+      color:#456a53;
+      text-decoration:none;
+      font-weight:700;
+      border-radius:2px;
+    }
+
+    .intro-photo{
+      min-height:520px;
+      background:
+        url("https://www.helensguesthouse.ar/assets/images/case-studies/grid/27.jpg")
+        center/cover no-repeat;
+    }
+
+    /* INFORMACIÓN */
+    .information{
+      max-width:1000px;
+      margin:0 auto 80px;
+      padding:0 25px;
+    }
+
+    .information h3{
+      font-family:Georgia,serif;
+      color:#456a53;
+      font-size:31px;
+      font-weight:400;
+      margin:38px 0 14px;
+    }
+
+    .information p{
+      margin-bottom:15px;
+      font-size:16px;
+    }
+
+    /* GALERÍA */
+    .gallery-section{
+      max-width:1200px;
+      margin:0 auto 90px;
+      padding:0 25px;
+    }
+
+    .gallery-title{
+      font-family:Georgia,serif;
+      color:#456a53;
+      font-size:34px;
+      font-weight:400;
+      margin-bottom:28px;
+      text-align:center;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
+
+    .gallery-item{
+      overflow:hidden;
+      cursor:pointer;
+      aspect-ratio:1/1;
+      background:#eee;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .35s ease, filter .35s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.045);
+      filter:brightness(.92);
+    }
+
+    /* VISOR */
+    .lightbox{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:3000;
+      background:rgba(20,30,25,.88);
+      backdrop-filter:blur(7px);
+      align-items:center;
+      justify-content:center;
+      padding:35px 80px;
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightbox img{
+      max-width:90vw;
+      max-height:88vh;
+      object-fit:contain;
+      box-shadow:0 10px 45px rgba(0,0,0,.4);
+    }
+
+    .close,
+    .prev,
+    .next{
+      position:absolute;
+      border:0;
+      background:transparent;
+      color:white;
+      cursor:pointer;
+      font-family:Arial,sans-serif;
+      text-shadow:0 2px 8px rgba(0,0,0,.5);
+    }
+
+    .close{
+      top:22px;
+      right:30px;
+      font-size:42px;
+    }
+
+    .prev,
+    .next{
+      top:50%;
+      transform:translateY(-50%);
+      font-size:58px;
+      padding:20px;
+    }
+
+    .prev{ left:15px; }
+    .next{ right:15px; }
+
+    /* PIE */
+    footer{
+      border-top:1px solid #e5e5e5;
+      padding:55px 25px 35px;
+      text-align:center;
+    }
+
+    .footer-brand{
+      font-family:Georgia,serif;
+      font-size:28px;
+      color:#456a53;
+      margin-bottom:5px;
+    }
+
+    .footer-sub{
+      font-family:Georgia,serif;
+      font-size:17px;
+      color:#456a53;
+      margin-bottom:25px;
+    }
+
+    .contact{
+      font-size:14px;
+      line-height:1.9;
+    }
+
+    .copyright{
+      margin-top:30px;
+      color:#888;
+      font-size:12px;
+    }
+
+    @media(max-width:900px){
+      .header-inner{
+        flex-direction:column;
+        gap:12px;
+      }
+
+      nav{
+        justify-content:center;
+      }
+
+      .hero{
+        min-height:470px;
+      }
+
+      .hero h1{
+        font-size:44px;
+      }
+
+      .intro{
+        grid-template-columns:1fr;
+      }
+
+      .intro-photo{
+        min-height:430px;
+      }
+
+      .gallery{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:600px){
+      .header-inner{
+        padding:12px;
+      }
+
+      .brand-main{
+        font-size:20px;
+      }
+
+      nav{
+        gap:11px;
+      }
+
+      nav a{
+        font-size:12px;
+      }
+
+      .hero{
+        min-height:390px;
+      }
+
+      .hero-content{
+        padding:0 20px 45px;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .intro{
+        margin:45px auto;
+        padding:0 15px;
+      }
+
+      .room-card{
+        padding:38px 28px;
+      }
+
+      .intro-photo{
+        min-height:350px;
+      }
+
+      .gallery-section{
+        padding:0 15px;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .lightbox{
+        padding:60px 45px;
+      }
+
+      .prev,
+      .next{
+        font-size:42px;
+        padding:8px;
+      }
+    }
+  </style>
+
+<style>
+  .hope-intro{max-width:1200px;margin:0 auto;padding:70px 24px;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+  .hope-intro h2{font-size:42px;line-height:1.15;margin:0 0 28px;color:#222}
+  .hope-lead{font-size:20px;font-weight:700;line-height:1.6;color:#333}
+  .hope-copy{font-size:18px;line-height:1.75;color:#666}
+  .hope-intro img{width:100%;height:520px;object-fit:cover}
+  .menu-card{background:#456a53;color:#fff;padding:70px 24px}
+  .menu-inner{max-width:1000px;margin:auto;text-align:center}
+  .menu-inner h2{font-size:42px;margin:0 0 35px}
+  .menu-group{margin:32px 0}
+  .menu-group h3{font-size:21px;margin-bottom:15px;color:#fff}
+  .menu-group p{font-size:18px;line-height:1.7;margin:0;color:#fff}
+  .dishes{max-width:1200px;margin:0 auto;padding:70px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:42px 30px}
+  .dish{text-align:center}
+  .dish img{width:100%;height:270px;object-fit:cover;cursor:pointer}
+  .dish h3{font-size:22px;margin:18px 0 8px;color:#222}
+  .dish p{font-size:17px;line-height:1.5;color:#666;margin:0}
+  @media(max-width:850px){
+    .hope-intro{grid-template-columns:1fr}
+    .hope-intro img{height:auto}
+    .dishes{grid-template-columns:1fr}
+  }
+</style>
+
+
+<style>
+/* Visor Hope Bristró: no modifica la apariencia de la galería */
+.hope-photo-btn{border:0;padding:0;margin:0;background:none;display:block;width:100%;cursor:pointer}
+.hope-photo-btn img{display:block;width:100%}
+.hope-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:99999;display:none;align-items:center;justify-content:center}
+.hope-lightbox.open{display:flex}
+.hope-lightbox img{max-width:86vw;max-height:86vh;object-fit:contain}
+.hope-close,.hope-prev,.hope-next{position:absolute;border:0;background:rgba(0,0,0,.45);color:#fff;cursor:pointer;z-index:2}
+.hope-close{right:28px;top:20px;font-size:54px;line-height:1;width:58px;height:58px}
+.hope-prev,.hope-next{top:50%;transform:translateY(-50%);font-size:76px;width:70px;height:100px}
+.hope-prev{left:24px}.hope-next{right:24px}
+</style>
+
+</head>
+
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-main"><strong>HELEN'S</strong> <span>GUEST</span> <strong>HOUSE</strong></div>
+      <div class="brand-sub">hotel boutique</div>
+    </a>
+    <div class="header-actions">
+      <a class="phone" href="tel:+5492477424752">☎ &nbsp;+54 9 2477 424752</a>
+      <a class="reserve" href="mailto:helensguesthouse@gmail.com">Reservas</a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Las Habitaciones</a>
+      <a href="hope-bristro.html">Hope Bristró</a>
+      <a href="#">Catering</a>
+      <a href="#">Cata de vinos</a>
+      <a href="galeria.html">Galería</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style='background-image:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url("https://www.helensguesthouse.ar/assets/images/page-titles/5.jpg")'>
+  <div class="hero-content">
+    <div class="breadcrumb">Home &nbsp;›&nbsp; Hope Bristró</div>
+    <h1>Hope Bristró</h1>
+  </div>
+</section>
+
+<section class="hope-intro">
+  <div>
+    <h2>El Restó, Un Espacio Para Disfrutar</h2>
+    <p class="hope-lead">El Bistró conserva el espíritu de la casa, cálido e íntimo, una experiencia para vivir con todos los sentidos.</p>
+    <p class="hope-copy">Es un espacio Gourmet, donde cada plato está pensado e ideado para satisfacer los más exigentes paladares. Hope cuenta con un sommelier diplomado y una cava que le permitirá disfrutar cada uno de nuestros exquisitos vinos a la temperatura correcta. Diseño y asesoramiento en la carta (menú) por la chef María Gabriela Martín.</p>
+  </div>
+  <img src="https://www.helensguesthouse.ar/assets/images/about/1.jpg" alt="Hope Bristró">
+</section>
+
+<section class="menu-card">
+  <div class="menu-inner">
+    <h2>La Carta</h2>
+    <div class="menu-group"><h3>Entradas / Apetizzerse</h3><p>Langostinos panko con mayonesa de palta.<br>Croquetas de tres quesos con chutney de tomates.<br>Provoleta rellena de cebollas moradas caramelizadas con verdes y tomates cherry.<br>Tarta de hojaldre, hinojos, panceta ahumada, tomates y queso.<br>Tabla de quesos y fiambres, escabeche de berenjenas y hummus.</p></div>
+    <div class="menu-group"><h3>Principales / Entrées</h3><p>Salmón rosado con gremolata de limón y risotto de remolachas.<br>Trucha, manteca de lima e hierbas, terrina de verduras.<br>Ojo de bife en croute de pimienta y cacao acompañado de papines, tomates, cebollas y ajos confitados.<br>Ribs de cerdo con salsa BBQ &amp; boniato con crocante.<br>Pechuga rellena de langostinos sobre risotto de echalottes y lima.<br>Risotto negro con frutos de mar.<br>Risotto de hongos.<br>Super milanesa de ojo de bife con papas cuña y alioli.</p></div>
+    <div class="menu-group"><h3>Pastas</h3><p>Sorrentinos de cabutia, nueces y muzzarella con salsa de espinacas y almendras.<br>Sorrentinos de centolla con crema de langostinos y tomate.<br>Sorrentinos de verduras con crema de calabaza y tomates.<br>Sorrentinos de lomo en larga cocción de chardonnay con salsa de hongos.<br>Pasta seca (spaghetti) con ragú de pulpo, tomate y perejil.<br>Fideos negros con mariscos y pesto de tomates secos.</p></div>
+    <div class="menu-group"><h3>Postres / Desserts</h3><p>Napoleón sorpresa.<br>Pavlova, crema y frutas frescas.<br>Cremoso de chocolate con crocante.<br>Tarta de peras y almendras con helado de americana.<br>Nemesis de chocolate con helado de frutos rojos.</p></div>
+    <div class="menu-group"><h3>Vinos / Wines</h3><p>Santa Julia Malbec · Uxmall Malbec · Familia Gascon Malbec · Altos las Hormigas Malbec · Saint Felicien Malbec · Uxmal Sauvignon Blanc Samillón · Santa Julia Chardonnay · Saint Felicien Chardonnay · Chandon Extra Brut · DV Catena Cabernet Malbec · DV Catena Malbec Malbec</p></div>
+  </div>
+</section>
+
+<section class="dishes">
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(0)"><img src="https://www.helensguesthouse.ar/assets/images/awards/1.jpg"></button><h3>Tarta De Hojaldre</h3><p>hinojos, panceta ahumada, tomates y queso</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(1)"><img src="https://www.helensguesthouse.ar/assets/images/awards/2.jpg"></button><h3>Croquetas De Tres Quesos</h3><p>con chutney de tomates</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(2)"><img src="https://www.helensguesthouse.ar/assets/images/awards/3.jpg"></button><h3>Langostinos Panko</h3><p>con mayonesa de palta</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(3)"><img src="https://www.helensguesthouse.ar/assets/images/awards/4.jpg"></button><h3>Provoleta Rellena</h3><p>de cebollas moradas caramelizadas con verdes y tomates cherry</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(4)"><img src="https://www.helensguesthouse.ar/assets/images/awards/5.jpg"></button><h3>Salmón Rosado</h3><p>con gremolata de limón y risotto de remolachas</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(5)"><img src="https://www.helensguesthouse.ar/assets/images/awards/6.jpg"></button><h3>Trucha</h3><p>manteca de lima e hierbas, terrina de verduras</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(6)"><img src="https://www.helensguesthouse.ar/assets/images/awards/7.jpg"></button><h3>Ribs De Cerdo</h3><p>con salsa BBQ &amp; boniato con crocante</p></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(7)"><img src="https://www.helensguesthouse.ar/assets/images/awards/8.jpg"></button><h3>Pavlova, Crema Y Frutas Frescas</h3></div>
+  <div class="dish"><button class="hope-photo-btn" type="button" onclick="openHopeLightbox(8)"><img src="https://www.helensguesthouse.ar/assets/images/awards/9.jpg"></button><h3>Napoleón Sorpresa</h3></div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">HELEN'S GUEST HOUSE</div>
+      <div class="footer-sub">hotel boutique</div>
+    </div>
+    <div>
+      <h4>DATOS DE CONTACTO</h4>
+      <p>Florida 514 | Pergamino<br>Buenos Aires - Argentina<br>Tel.: +54 02477 424752</p>
+      <p>helensguesthouse@gmail.com</p>
+    </div>
+  </div>
+  <div class="copyright">© 2021 Helen's Guest House</div>
+</footer>
+
+<div class="hope-lightbox" id="hopeLightbox" aria-hidden="true">
+  <button class="hope-close" type="button" onclick="closeHopeLightbox()" aria-label="Cerrar">×</button>
+  <button class="hope-prev" type="button" onclick="moveHope(-1)" aria-label="Anterior">‹</button>
+  <img id="hopeLightboxImg" alt="Plato ampliado de Hope Bristró">
+  <button class="hope-next" type="button" onclick="moveHope(1)" aria-label="Siguiente">›</button>
+</div>
+
+
+<script>
+const hopeImages=['https://www.helensguesthouse.ar/assets/images/awards/1.jpg','https://www.helensguesthouse.ar/assets/images/awards/2.jpg','https://www.helensguesthouse.ar/assets/images/awards/3.jpg','https://www.helensguesthouse.ar/assets/images/awards/4.jpg','https://www.helensguesthouse.ar/assets/images/awards/5.jpg','https://www.helensguesthouse.ar/assets/images/awards/6.jpg','https://www.helensguesthouse.ar/assets/images/awards/7.jpg','https://www.helensguesthouse.ar/assets/images/awards/8.jpg','https://www.helensguesthouse.ar/assets/images/awards/9.jpg'];
+let hopeIndex=0;
+function openHopeLightbox(i){
+  hopeIndex=i;
+  document.getElementById('hopeLightboxImg').src=hopeImages[hopeIndex];
+  document.getElementById('hopeLightbox').classList.add('open');
+  document.getElementById('hopeLightbox').setAttribute('aria-hidden','false');
+}
+function closeHopeLightbox(){
+  document.getElementById('hopeLightbox').classList.remove('open');
+  document.getElementById('hopeLightbox').setAttribute('aria-hidden','true');
+}
+function moveHope(step){
+  hopeIndex=(hopeIndex+step+hopeImages.length)%hopeImages.length;
+  document.getElementById('hopeLightboxImg').src=hopeImages[hopeIndex];
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeHopeLightbox();
+  if(document.getElementById('hopeLightbox').classList.contains('open')){
+    if(e.key==='ArrowLeft') moveHope(-1);
+    if(e.key==='ArrowRight') moveHope(1);
+  }
+});
+document.getElementById('hopeLightbox').addEventListener('click',e=>{
+  if(e.target.id==='hopeLightbox') closeHopeLightbox();
+});
+</script>
+
+</body>
+
+</html>
